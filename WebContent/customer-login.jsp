@@ -323,7 +323,8 @@
                     if (error.code === "auth/popup-closed-by-user") {
                         showStatus("Sign in was closed before finishing. Please click 'Continue with Google' to try again.", "info");
                     } else if (error.code === "auth/unauthorized-domain") {
-                        showStatus("Firebase Domain Error: Please add <code>localhost</code> to Authorized Domains in Firebase Console &gt; Authentication &gt; Settings.", "error");
+                        var currentHost = window.location.hostname || "localhost";
+                        showStatus("Firebase Domain Error: Please add <code>" + currentHost + "</code> to <strong>Authorized Domains</strong> in Firebase Console &gt; Authentication &gt; Settings &gt; Authorized domains.", "error");
                     } else {
                         showStatus(error.message || "Google sign in failed.", "error");
                     }
