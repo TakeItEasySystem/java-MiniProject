@@ -1,0 +1,5 @@
+.git
+.gitignore
+*.log
+START_SERVER.bat
+src_reference_backup

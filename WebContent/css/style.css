@@ -1,0 +1,1314 @@
+/* ==========================================================================
+   WebEase Design System - Authentic Sivte Aesthetic Reference
+   Course: Full Stack Java Programming (FSJP) - Units I to VI
+   Color Palette: Warm Stone (#F7F7F5), Pitch Black (#0A0A0A, #171717),
+                  Burnt Orange (#FD5228), Deep Rust (#B83313), Border (#DEDED8)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-page: #F7F7F5;
+    --bg-card: #FFFFFF;
+    --bg-dark: #0A0A0A;
+    --bg-dark-secondary: #171717;
+    --bg-subtle: #EEEEEC;
+    --ink: #0A0A0A;
+    --ink-light: #222222;
+    --muted: #565A60;
+    --muted-light: #8A8A83;
+    --border: #DEDED8;
+    --border-light: #E7E7E2;
+    --border-dark: #333333;
+    --accent: #FD5228;
+    --accent-hover: #ED461D;
+    --accent-rust: #B83313;
+    --accent-light: #FFF1E9;
+    --success: #10B981;
+    --success-bg: #ECFDF5;
+    --warning: #F59E0B;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 8px;
+    --radius-full: 4px;
+    --font-heading: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow: 0 4px 14px rgba(10, 10, 10, 0.05);
+    --shadow-lg: 0 18px 40px rgba(10, 10, 10, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-page);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.18s ease, transform 0.18s ease;
+}
+
+p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+/* ==========================================================================
+   1. Customer Bar (Sivte Top Bar)
+   ========================================================================== */
+.sivte-customer-bar {
+    background: #F3F3F0;
+    border-bottom: 1px solid var(--border-light);
+    padding: 7px 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--muted);
+}
+
+.sivte-customer-bar a {
+    color: #222;
+    font-weight: 600;
+}
+
+.sivte-customer-bar a:hover {
+    color: var(--accent-rust);
+}
+
+/* ==========================================================================
+   2. Navbar (Sivte Clean Sticky Header)
+   ========================================================================== */
+.sivte-header {
+    background: rgba(247, 247, 245, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.sivte-nav-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.sivte-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    font-family: var(--font-heading);
+}
+
+.sivte-logo-box {
+    width: 34px;
+    height: 34px;
+    background: var(--bg-dark);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 800;
+    font-size: 1.15rem;
+    border: 1px solid rgba(253, 82, 40, 0.4);
+}
+
+.brand-logo-img {
+    height: 44px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.brand-logo-img-sm {
+    height: 28px;
+    width: auto;
+    max-width: 110px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sivte-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.sivte-nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    padding: 6px 4px;
+    position: relative;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+}
+
+.sivte-nav-link:hover, .sivte-nav-link.active {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.sivte-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.sivte-cta-btn {
+    background: var(--bg-dark-secondary) !important;
+    color: #FFF !important;
+    border: 1px solid var(--bg-dark-secondary);
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.sivte-cta-btn:hover {
+    background: #303030 !important;
+}
+
+/* ==========================================================================
+   3. Common Layout & Sivte Eyebrows
+   ========================================================================== */
+.sivte-shell {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.sivte-section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.sivte-section:last-of-type {
+    border-bottom: none;
+}
+
+.hm-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--accent-rust);
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.hm-eyebrow::before {
+    content: '';
+    width: 22px;
+    height: 2.5px;
+    background: var(--accent);
+    display: block;
+    flex-shrink: 0;
+}
+
+.sivte-pill-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid #E9D9CF;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.85);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    color: var(--accent-rust);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.sivte-pill-eyebrow::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.hm-headline-accent {
+    position: relative;
+    display: inline-block;
+    color: var(--ink);
+}
+
+.hm-headline-accent::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--accent);
+}
+
+/* Button styles */
+.btn-sivte-black {
+    background: #171717;
+    color: #FFF;
+    border: 1px solid #171717;
+    padding: 13px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    text-decoration: none;
+    font-family: var(--font-heading);
+}
+
+.btn-sivte-black:hover {
+    background: #303030;
+    color: #FFF;
+}
+
+.btn-sivte-outline {
+    background: #FFF;
+    color: #171717;
+    border: 1px solid #D6D0CA;
+    padding: 13px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    text-decoration: none;
+    font-family: var(--font-heading);
+}
+
+.btn-sivte-outline:hover {
+    background: #EDEAE5;
+    border-color: #B8B8B0;
+    color: #171717;
+}
+
+.btn-sivte-orange {
+    background: var(--accent);
+    color: #0A0A0A;
+    border: 1px solid var(--accent);
+    padding: 13px 22px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    text-decoration: none;
+    font-family: var(--font-heading);
+}
+
+.btn-sivte-orange:hover {
+    background: var(--accent-hover);
+    color: #0A0A0A;
+}
+
+/* ==========================================================================
+   4. Hero Section (Sivte Atmospheric Hero + Interactive Service Map)
+   ========================================================================== */
+.sivte-hero-wrap {
+    padding: 60px 0 54px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse 55% 650px at 100% 0%, #FFE6D7 0%, transparent 75%),
+                linear-gradient(180deg, #FFFCF8 0px, #FAF9F6 850px, #F7F7F5 1100px);
+}
+
+.sivte-hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.sivte-hero-title {
+    font-size: clamp(38px, 4.4vw, 58px);
+    line-height: 1.1;
+    letter-spacing: -0.05em;
+    margin-bottom: 22px;
+}
+
+.sivte-hero-lead {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 530px;
+    margin-bottom: 28px;
+}
+
+.sivte-hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+
+.sivte-hero-subtext {
+    font-size: 13px;
+    color: var(--muted-light);
+}
+
+/* Sivte Signature Central Interactive Map */
+.hm-service-map {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 490px;
+    margin: 0 auto;
+    border: 1px solid #485159;
+    border-radius: 24px;
+    background: radial-gradient(ellipse at 48% 47%, #394048 0%, #202B32 35%, #101B24 72%);
+    box-shadow: 0 0 0 8px rgba(255, 250, 241, 0.8),
+                0 0 0 9px rgba(233, 216, 203, 0.5),
+                0 30px 65px -22px rgba(84, 37, 11, 0.28);
+    overflow: hidden;
+}
+
+.hm-map-connections {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.hm-map-node {
+    position: absolute;
+    width: 23%;
+    height: 19%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(40, 52, 60, 0.95), rgba(24, 33, 41, 0.98));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hm-map-node-icon {
+    font-size: 20px;
+}
+
+.hm-map-node-1 { left: 8%; top: 7%; }
+.hm-map-node-2 { right: 8%; top: 7%; }
+.hm-map-node-3 { left: 4%; top: 41%; }
+.hm-map-node-4 { right: 4%; top: 41%; }
+.hm-map-node-5 { left: 8%; bottom: 7%; }
+.hm-map-node-6 { right: 8%; bottom: 7%; }
+
+.hm-map-centre {
+    position: absolute;
+    left: 28%;
+    top: 33%;
+    width: 44%;
+    text-align: center;
+}
+
+.hm-polish-screen {
+    background: linear-gradient(145deg, #25343E, #111D26 75%);
+    border: 1.5px solid #BEC4C5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 0 4px rgba(12, 21, 27, 0.5), 0 16px 24px rgba(0, 0, 0, 0.3);
+    padding-bottom: 12px;
+}
+
+.hm-polish-chrome {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 20px;
+    background: #394852;
+    padding: 0 8px;
+}
+
+.hm-polish-chrome i {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #80909B;
+    display: block;
+}
+
+.hm-polish-chrome i:first-child { background: var(--accent); }
+
+.hm-polish-content {
+    padding: 14px 10px;
+    color: #FFF;
+}
+
+.hm-polish-content strong {
+    font-size: 14px;
+    line-height: 1.25;
+    display: block;
+}
+
+.hm-managed-word {
+    color: #FFA37F;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   5. Sivte Support Strip (Horizontal Managed Features Banner)
+   ========================================================================== */
+.hm-support-strip {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    align-items: center;
+    gap: 24px;
+    margin-top: 48px;
+    padding: 24px 30px;
+    border: 1px solid #E3DED6;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(115deg, #FFFDFB, rgba(255, 255, 255, 0.85));
+    box-shadow: 0 12px 26px -18px rgba(68, 55, 42, 0.15);
+}
+
+.hm-support-strip > p {
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #596065;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.hm-support-strip ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 0;
+    padding: 0;
+}
+
+.hm-support-strip li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #17232B;
+    border-left: 1px solid #E9E3DC;
+    padding-left: 14px;
+}
+
+.hm-support-strip li:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+.hm-support-strip li .strip-icon {
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   6. Main Fully Managed Website Product Card (Sivte 2-Column Split)
+   ========================================================================== */
+.hm-website-card {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 40px;
+    padding: 38px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    margin-top: 24px;
+}
+
+.hm-website-card h3 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.hm-checks {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+    margin: 24px 0;
+}
+
+.hm-checks li {
+    font-size: 14px;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.hm-checks li::before {
+    content: '✓';
+    color: var(--accent-rust);
+    font-weight: 800;
+}
+
+/* Pitch Black Price Panel */
+.hm-price-panel {
+    background: var(--bg-dark);
+    color: #FFFFFF;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hm-price-panel .hm-eyebrow {
+    color: #FD7958;
+}
+
+.hm-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #2B2B2B;
+    padding: 12px 0;
+    font-size: 14px;
+}
+
+.hm-price-row:last-of-type {
+    border-bottom: none;
+}
+
+.hm-price-row .price-val {
+    font-size: 28px;
+    font-weight: 800;
+    color: #FFF;
+    letter-spacing: -0.04em;
+}
+
+.hm-price-row .price-unit {
+    font-size: 13px;
+    color: #AAA;
+}
+
+/* ==========================================================================
+   7. Numbered 4-Step Process (Sivte 01, 02, 03, 04 Pipeline)
+   ========================================================================== */
+.hm-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: 32px;
+}
+
+.hm-step {
+    border-top: 1px solid #D1D1CA;
+    padding-top: 22px;
+}
+
+.hm-step-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-rust);
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+}
+
+.hm-step h3 {
+    font-size: 19px;
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+}
+
+.hm-step p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   8. Scope & 100% Client Ownership Guarantee
+   ========================================================================== */
+.mw-scope-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.mw-scope-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.mw-scope-card.highlight {
+    border: 1.5px solid var(--accent);
+    background: #FFFDFB;
+    box-shadow: 0 10px 30px rgba(253, 82, 40, 0.08);
+}
+
+.mw-scope-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.mw-scope-list {
+    list-style: none;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mw-scope-list li {
+    font-size: 14px;
+    color: #444;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+}
+
+.mw-scope-list li .bullet {
+    font-weight: 800;
+}
+
+.mw-scope-list li .bullet.green { color: #10B981; }
+.mw-scope-list li .bullet.rust { color: var(--accent-rust); }
+.mw-scope-list li .bullet.gray { color: #888; }
+
+/* ==========================================================================
+   9. Direct Comparison Matrix Table
+   ========================================================================== */
+.hm-matrix-wrapper {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-top: 32px;
+    box-shadow: var(--shadow-sm);
+}
+
+.hm-matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+}
+
+.hm-matrix-table th {
+    background: #0A0A0A;
+    color: #FFF;
+    padding: 16px 20px;
+    font-size: 14px;
+    font-family: var(--font-heading);
+}
+
+.hm-matrix-table th.col-webease {
+    background: #171717;
+    border-left: 2px solid var(--accent);
+    border-right: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.hm-matrix-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-light);
+    color: #333;
+}
+
+.hm-matrix-table tr:last-child td {
+    border-bottom: none;
+}
+
+.hm-matrix-table td.col-webease {
+    background: #FFFBF8;
+    font-weight: 600;
+    color: #0A0A0A;
+    border-left: 2px solid var(--accent);
+    border-right: 2px solid var(--accent);
+}
+
+.matrix-badge-win {
+    background: #FFF1E9;
+    color: var(--accent-rust);
+    border: 1px solid #FCD4C2;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   10. Interactive Industry Verticals & Menu Cart Simulation
+   ========================================================================== */
+.vertical-tabs-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.vertical-tab-btn {
+    background: #FFF;
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    color: #444;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: all 0.18s ease;
+}
+
+.vertical-tab-btn:hover, .vertical-tab-btn.active {
+    background: #0A0A0A;
+    color: #FFF;
+    border-color: #0A0A0A;
+}
+
+.vertical-showcase-box {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 36px;
+    background: #FFF;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 36px;
+}
+
+.demo-menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: #F7F7F5;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+}
+
+.demo-order-tray {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0A0A0A;
+    color: #FFF;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    margin-top: 12px;
+}
+
+/* ==========================================================================
+   11. Interactive Pricing Calculator (Sivte Dark Panel Style)
+   ========================================================================== */
+.pricing-calc-box {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 36px;
+    background: #FFF;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 36px;
+    margin-top: 28px;
+}
+
+.calc-group {
+    margin-bottom: 20px;
+}
+
+.calc-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.calc-select, .calc-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: #FFF;
+    font-size: 14px;
+    font-family: var(--font-body);
+    outline: none;
+}
+
+.calc-select:focus, .calc-input:focus {
+    border-color: var(--accent);
+}
+
+.calc-output-panel {
+    background: var(--bg-dark);
+    color: #FFF;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 3px solid var(--accent);
+}
+
+.calc-big-price {
+    font-size: 38px;
+    font-weight: 800;
+    color: #FFF;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+    margin: 8px 0;
+}
+
+/* ==========================================================================
+   12. FAQ Accordion (Sivte Style Details)
+   ========================================================================== */
+.hm-faq-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+    margin-top: 36px;
+}
+
+.hm-faq-list details {
+    border-top: 1px solid var(--border);
+    padding: 18px 0;
+    cursor: pointer;
+}
+
+.hm-faq-list details:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.hm-faq-list summary {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hm-faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.hm-faq-list summary::after {
+    content: '+';
+    font-size: 22px;
+    color: var(--accent-rust);
+    font-weight: 400;
+}
+
+.hm-faq-list details[open] summary::after {
+    content: '−';
+}
+
+.hm-faq-list details p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 14px;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   13. Sivte Direct Contact Panel (Pitch Black Card with Burnt Orange Top)
+   ========================================================================== */
+.hm-contact-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 44px;
+    background: var(--bg-dark);
+    border-radius: var(--radius-xl);
+    border-top: 3px solid var(--accent);
+    margin: 64px 0 32px;
+}
+
+.hm-contact-panel h2 {
+    color: #FFF;
+    font-size: 34px;
+    margin-bottom: 14px;
+}
+
+.hm-contact-panel p {
+    color: #CCC;
+    font-size: 16px;
+}
+
+.hm-contact-routes {
+    display: grid;
+    gap: 14px;
+}
+
+.hm-contact-route {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #FFF;
+    border: 1px solid #FFF;
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    color: #111;
+    text-decoration: none;
+    transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.hm-contact-route:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.hm-contact-route strong {
+    font-size: 16px;
+    display: block;
+    color: var(--ink);
+}
+
+.hm-contact-route span {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.hm-contact-arrow {
+    margin-left: auto;
+    font-size: 18px;
+    color: var(--accent-rust);
+}
+
+/* ==========================================================================
+   14. Clean Sivte Footer
+   ========================================================================== */
+.sivte-footer {
+    background: #F3F3F0;
+    border-top: 1px solid var(--border);
+    padding: 56px 24px 32px;
+    color: #333;
+}
+
+.sivte-footer-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+}
+
+.sivte-footer h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--ink);
+}
+
+.sivte-footer a {
+    color: #555;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.sivte-footer a:hover {
+    color: var(--accent-rust);
+}
+
+/* ==========================================================================
+   15. Modals & Telemetry View Toggles
+   ========================================================================== */
+.view-hidden {
+    display: none !important;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-card {
+    background: #FFF;
+    border-radius: var(--radius-xl);
+    max-width: 560px;
+    width: 100%;
+    padding: 32px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Quick Jump Navigation Pill Buttons */
+.hero-quick-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.btn-quick-pill {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 7px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: inherit;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.btn-quick-pill:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+    background: #F3F3F0;
+}
+
+.btn-quick-pill.highlight {
+    background: #FFF1E9;
+    border-color: #FCD4C2;
+    color: var(--accent-rust);
+}
+
+/* Talk to Team Modal Card */
+.talk-team-card-wrap {
+    max-width: 620px;
+}
+
+.talk-team-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.talk-card {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 20px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: #FFFFFF;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.talk-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.talk-card.talk-whatsapp:hover {
+    border-color: #25D366;
+    background: #F0FDF4;
+}
+
+.talk-card.talk-phone:hover {
+    border-color: var(--accent);
+    background: #FFFBF9;
+}
+
+.talk-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.talk-icon-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.talk-icon-badge.whatsapp-badge {
+    background: #DCFCE7;
+    color: #15803D;
+    border: 1px solid #BBF7D0;
+}
+
+.talk-icon-badge.phone-badge {
+    background: #FFF1E9;
+    color: var(--accent-rust);
+    border: 1px solid #FCD4C2;
+}
+
+.talk-badge-pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.talk-badge-pill.green {
+    background: #ECFDF5;
+    color: #059669;
+    border: 1px solid #A7F3D0;
+}
+
+.talk-badge-pill.orange {
+    background: #FFFBEB;
+    color: #D97706;
+    border: 1px solid #FDE68A;
+}
+
+.talk-card-title {
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 2px;
+    display: block;
+}
+
+.talk-card-contact {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-rust);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.talk-card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.talk-card-action {
+    display: flex;
+    width: 100%;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 900px) {
+    .sivte-hero-grid, .hm-website-card, .vertical-showcase-box,
+    .pricing-calc-box, .hm-faq-grid, .hm-contact-panel, .sivte-footer-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .hm-support-strip {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .hm-support-strip ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .hm-steps-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .mw-scope-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hm-steps-grid {
+        grid-template-columns: 1fr;
+    }
+    .hm-support-strip ul {
+        grid-template-columns: 1fr;
+    }
+    .hm-checks {
+        grid-template-columns: 1fr;
+    }
+    .talk-team-options {
+        grid-template-columns: 1fr;
+    }
+}
